@@ -83,7 +83,7 @@ jobs:
           patch('XServerDisplayActivity.java',
                 'String vulkanVersionPatch = GPUInformation.getVulkanVersion(adrenoToolsDriverId, this).split("\\\\.")[2];',
                 '''String queriedVulkanVersion = GPUInformation.getVulkanVersion(adrenoToolsDriverId, this);
-                  String[] vulkanParts = queriedVulkanVersion != null ? queriedVulkanVersion.split("\\.") : new String[0];
+                  String[] vulkanParts = queriedVulkanVersion != null ? queriedVulkanVersion.split("\\\\.") : new String[0];
                   String vulkanVersionPatch = vulkanParts.length >= 3 ? vulkanParts[2] : "0";''')
           print('PanVK build-time Java changes applied.')
           PYCODE
